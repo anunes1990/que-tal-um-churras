@@ -1,44 +1,36 @@
 {
-  "tarefas": [
+  "churras": [
     {
       "id": 1,
-      "tarefa": "Tarefa 1",
-      "selecionado": false
+      "tarefa": "Tarefa 1"
     },
     {
       "id": 2,
-      "tarefa": "Tarefa 2",
-      "selecionado": false
+      "tarefa": "Tarefa 2"
     },
     {
       "id": 3,
-      "tarefa": "Tarefa 3",
-      "selecionado": false
+      "tarefa": "Tarefa 3"
     },
     {
       "id": 4,
-      "tarefa": "Tarefa 4",
-      "selecionado": false
+      "tarefa": "Tarefa 4"
     },
     {
       "id": 5,
-      "tarefa": "Tarefa 5",
-      "selecionado": false
+      "tarefa": "Tarefa 5"
     },
     {
       "id": 6,
-      "tarefa": "Tarefa 6",
-      "selecionado": false
+      "tarefa": "Tarefa 6"
     },
     {
-      "tarefa": "Tarefa 7",
-      "selecionado": false,
-      "id": 7
+      "id": 7,
+      "tarefa": "Tarefa 7"
     },
     {
-      "tarefa": "Tarefa 8",
-      "selecionado": false,
-      "id": 8
+      "id": 8,
+      "tarefa": "Tarefa 8"
     }
   ]
 }
