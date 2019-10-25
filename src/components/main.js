@@ -3,12 +3,10 @@ import {
   StyleSheet,
   Text,
   View,
-  Button,
   TouchableOpacity,
   ImageBackground,
 } from 'react-native';
 import {novoChurras, listaChurras} from '../assets/image';
-import api from '../services/api';
 
 export default class MainScreen extends Component {
   static navigationOptions = {
@@ -48,14 +46,12 @@ export default class MainScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //justifyContent: "center",
-    //alignItems:"center"
   },
 
   op: {
     flex: 1,
     height: '50%',
-    borderWidth: 3
+    borderWidth: 3,
   },
 
   colorOp1: {
@@ -80,5 +76,3 @@ const styles = StyleSheet.create({
     color: '#ffffff',
   },
 });
-//<Text>Que Tal Um Churras?</Text>
-//<Button title="Lista de Churras" onPress={()=>this.goToListChurras()}></Button>

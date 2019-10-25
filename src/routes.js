@@ -4,6 +4,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 import MainScreen from './components/main';
 import ListaChurrasScreen from './components/listaChurras';
 import NovoChurrasScreen from './components/novoChurras';
+import ChurrasScreen from './components/churras';
 
 const AppNavigator = createStackNavigator(
   {
@@ -11,6 +12,7 @@ const AppNavigator = createStackNavigator(
     Main: MainScreen,
     ListaChurras: ListaChurrasScreen,
     NovoChurras: NovoChurrasScreen,
+    Churras: ChurrasScreen
   },
   {
     defaultNavigationOptions: {

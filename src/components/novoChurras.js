@@ -19,9 +19,10 @@ export default class NovoChurrasScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tarefa: '',
+      evento: '',
+      local: '',
       dataChurras: new Date(),
-      qtdPessoas: 0,
+      qtdPessoas: '',
       quilosCarne: '0.0 Kg',
       latasCeva: '0 Latões',
     };
@@ -33,10 +34,6 @@ export default class NovoChurrasScreen extends Component {
     this.setState({dataChurras: newDate});
   }
 
-  componentWillMount() {
-    //this.getListaChurras();
-  }
-
   getListaChurras = async () => {
     const response = await api.get('/churras');
     const lista = response.data;
@@ -45,10 +42,11 @@ export default class NovoChurrasScreen extends Component {
 
   calculaCarneCerveja(qtdPessoas) {
     if (qtdPessoas) {
+      this.setState({qtdPessoas: qtdPessoas})
       const num = parseInt(qtdPessoas);
       let kg = 0.0;
       for (let i = 0; i < num; i++) {
-        kg = kg + 0.5;
+        kg = kg + 0.75;
       }
       this.setState({quilosCarne: `${kg} Kg`, latasCeva: `${num * 4} Latões`});
     } else {
@@ -56,12 +54,10 @@ export default class NovoChurrasScreen extends Component {
     }
   }
 
-    async salvaChurras (state){
-        console.log(state)
-        const response = await api.post('/churras', state);
-        console.log(response)
-    }
-
+  async salvaChurras(state) {
+    await api.post('/churras', state);
+    this.props.navigation.goBack();
+  }
 
   render() {
     return (
@@ -79,8 +75,14 @@ export default class NovoChurrasScreen extends Component {
           <TextInput
             style={styles.txtInput}
             placeholder={'Nome do Evento'}
-            value={this.state.tarefa}
-            onChangeText={(text)=> this.setState({tarefa:text})}></TextInput>
+            value={this.state.evento}
+            onChangeText={text => this.setState({evento: text})}></TextInput>
+
+          <TextInput
+            style={styles.txtInput}
+            placeholder={'Local do Evento'}
+            value={this.state.local}
+            onChangeText={text => this.setState({local: text})}></TextInput>
 
           <TextInput
             style={styles.txtInput}
@@ -91,8 +93,10 @@ export default class NovoChurrasScreen extends Component {
 
           <Text style={styles.label}> {this.state.quilosCarne} </Text>
           <Text style={styles.label}> {this.state.latasCeva} </Text>
-
-          <Button title={'Salvar Churras'} onPress={() => this.salvaChurras(this.state)} ></Button>
+          <Button
+            style={styles.btnSave}
+            title={'Salvar Churras'}
+            onPress={() => this.salvaChurras(this.state)}></Button>
         </View>
       </ImageBackground>
     );
@@ -105,13 +109,14 @@ const styles = StyleSheet.create({
     padding: 15,
     alignContent: 'center',
   },
+
   imageBack: {
     height: '100%',
     width: '100%',
   },
 
   datepick: {
-    backgroundColor: '#ffffff36',
+    backgroundColor: '#ffffff',
     borderRadius: 10,
   },
 
@@ -120,7 +125,6 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 10,
     marginTop: 10,
-    marginBottom: 10,
     paddingHorizontal: 10,
     fontSize: 18,
   },
@@ -133,5 +137,3 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
 });
-
-//export default ListaChurrasScreen;

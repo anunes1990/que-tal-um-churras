@@ -11,7 +11,6 @@ import api from '../services/api';
 import {background} from '../assets/image';
 
 const Item = ({title, selecionado, onPress, onLongPress}) => {
-  console.log(selecionado);
   return (
     <TouchableWithoutFeedback onPress={onPress} onLongPress={onLongPress}>
       <View style={styles.itemContainer}>
@@ -43,6 +42,10 @@ export default class MainScreen extends Component {
     this.setState({churras: lista});
   };
 
+  mostrarChurras(id) {
+    this.props.navigation.navigate('Churras', {id: id});
+  }
+
   render() {
     return (
       <ImageBackground source={background} style={styles.imageBack}>
@@ -53,10 +56,10 @@ export default class MainScreen extends Component {
             keyExtractor={item => item.id.toString()}
             renderItem={({item}) => (
               <Item
-                title={item.tarefa}
+                title={item.evento}
                 selecionado={item.selecionado}
-                onPress={() => this.selecionar(item.id)}
-                onLongPress={() => this.mostrarTarefa(item.id)}
+                onPress={() => this.mostrarChurras(item.id)}
+                onLongPress={() => this.mostrarChurras(item.id)}
               />
             )}
           />
@@ -79,22 +82,21 @@ const styles = StyleSheet.create({
 
   itemContainer: {
     backgroundColor: '#FFFFFF36',
-    //borderWidth: 1,
     borderRadius: 10,
     borderColor: '#DDD',
     padding: 20,
     marginBottom: 20,
   },
+
   itemText: {
     fontSize: 20,
     fontWeight: 'bold',
     color: '#FFF',
   },
+
   itemTextSelecionado: {
     fontSize: 20,
     textDecorationLine: 'line-through',
     color: '#888',
   },
 });
-
-//export default ListaChurrasScreen;

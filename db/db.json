@@ -1,35 +1,39 @@
 {
   "churras": [
     {
-      "id": 1,
-      "tarefa": "Churras 1",
-      "dataChurras": "",
-      "qtdPessoas": 4,
-      "quilosCarne": "3.0 Kg",
-      "latasCeva": "16 Latões"
+      "evento": "Trabalho Final",
+      "local": "SENAC",
+      "dataChurras": "2019-10-26T17:28:36.000Z",
+      "qtdPessoas": "8",
+      "quilosCarne": "6 Kg",
+      "latasCeva": "32 Latões",
+      "id": 1
     },
     {
-      "id": 2,
-      "tarefa": "Churras 2",
-      "dataChurras": "",
-      "qtdPessoas": 4,
-      "quilosCarne": "3.0 Kg",
-      "latasCeva": "16 Latões"
+      "evento": "Casa da Sogra",
+      "local": "Casa dela",
+      "dataChurras": "2019-10-27T17:31:13.000Z",
+      "qtdPessoas": "10",
+      "quilosCarne": "7.5 Kg",
+      "latasCeva": "40 Latões",
+      "id": 2
     },
     {
-      "tarefa": "Churras 3",
-      "dataChurras": "2019-10-25T03:51:45.061Z",
-      "qtdPessoas": 0,
-      "quilosCarne": "1.5 Kg",
-      "latasCeva": "12 Latões",
+      "evento": "Churras do Futebol",
+      "local": "MCM",
+      "dataChurras": "2019-10-25T17:34:13.457Z",
+      "qtdPessoas": "10",
+      "quilosCarne": "7.5 Kg",
+      "latasCeva": "40 Latões",
       "id": 3
     },
     {
-      "tarefa": "Churras 4",
-      "dataChurras": "2019-10-26T03:55:12.000Z",
-      "qtdPessoas": 0,
-      "quilosCarne": "2.5 Kg",
-      "latasCeva": "20 Latões",
+      "evento": "Casa",
+      "local": "Casa",
+      "dataChurras": "2019-10-25T18:06:09.195Z",
+      "qtdPessoas": "10",
+      "quilosCarne": "7.5 Kg",
+      "latasCeva": "40 Latões",
       "id": 4
     }
   ]
