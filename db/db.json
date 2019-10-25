@@ -2,35 +2,13 @@
   "churras": [
     {
       "id": 1,
-      "tarefa": "Tarefa 1"
+      "tarefa": "Churrasco 1",
+      "id_lista": 1
     },
     {
       "id": 2,
-      "tarefa": "Tarefa 2"
-    },
-    {
-      "id": 3,
-      "tarefa": "Tarefa 3"
-    },
-    {
-      "id": 4,
-      "tarefa": "Tarefa 4"
-    },
-    {
-      "id": 5,
-      "tarefa": "Tarefa 5"
-    },
-    {
-      "id": 6,
-      "tarefa": "Tarefa 6"
-    },
-    {
-      "id": 7,
-      "tarefa": "Tarefa 7"
-    },
-    {
-      "id": 8,
-      "tarefa": "Tarefa 8"
+      "tarefa": "Churrasco 2",
+      "id_lista": 2
     }
   ]
 }

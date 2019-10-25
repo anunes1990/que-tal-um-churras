@@ -19,12 +19,16 @@ export default class MainScreen extends Component {
     this.props.navigation.navigate('ListaChurras');
   };
 
+  goToNovoChurras = () => {
+    this.props.navigation.navigate('NovoChurras');
+  };
+
   render() {
     return (
       <View style={styles.container}>
         <TouchableOpacity
           style={[styles.op, styles.colorOp1]}
-          onPress={() => this.goToListChurras()}>
+          onPress={() => this.goToNovoChurras()}>
           <ImageBackground source={novoChurras} style={styles.imageBack}>
             <Text style={styles.textOp}> Novo Churras? </Text>
           </ImageBackground>

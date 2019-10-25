@@ -10,23 +10,9 @@ import {
 import api from '../services/api';
 import {background} from '../assets/image';
 
-const Item = ({title, selecionado, onPress, onLongPress}) => {
-  console.log(selecionado);
-  return (
-    <TouchableWithoutFeedback onPress={onPress} onLongPress={onLongPress}>
-      <View style={styles.itemContainer}>
-        <Text
-          style={selecionado ? styles.itemTextSelecionado : styles.itemText}>
-          {title}
-        </Text>
-      </View>
-    </TouchableWithoutFeedback>
-  );
-};
-
-export default class MainScreen extends Component {
+export default class NovoChurrasScreen extends Component {
   static navigationOptions = {
-    title: 'Lista de Churras',
+    title: 'Novo Churras',
   };
 
   state = {
@@ -34,7 +20,7 @@ export default class MainScreen extends Component {
   };
 
   componentWillMount() {
-    this.getListaChurras();
+    //this.getListaChurras();
   }
 
   getListaChurras = async () => {
@@ -47,19 +33,7 @@ export default class MainScreen extends Component {
     return (
       <ImageBackground source={background} style={styles.imageBack}>
         <View style={styles.container}>
-          <FlatList
-            data={this.state.churras}
-            extraData={this.state}
-            keyExtractor={item => item.id.toString()}
-            renderItem={({item}) => (
-              <Item
-                title={item.tarefa}
-                selecionado={item.selecionado}
-                onPress={() => this.selecionar(item.id)}
-                onLongPress={() => this.mostrarTarefa(item.id)}
-              />
-            )}
-          />
+          <Text>Novo Churras</Text>
         </View>
       </ImageBackground>
     );
@@ -71,15 +45,13 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 15,
   },
-
-  imageBack: {
-    width: '100%',
-    height: '100%',
+  imageBack:{
+    height:'100%',
+    width:'100%'
   },
-
   itemContainer: {
-    backgroundColor: '#FFFFFF36',
-    //borderWidth: 1,
+    backgroundColor: '#FFF',
+    borderWidth: 1,
     borderRadius: 10,
     borderColor: '#DDD',
     padding: 20,
@@ -88,7 +60,7 @@ const styles = StyleSheet.create({
   itemText: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#FFF',
+    color: '#333',
   },
   itemTextSelecionado: {
     fontSize: 20,
