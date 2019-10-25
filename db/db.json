@@ -2,13 +2,35 @@
   "churras": [
     {
       "id": 1,
-      "tarefa": "Churrasco 1",
-      "id_lista": 1
+      "tarefa": "Churras 1",
+      "dataChurras": "",
+      "qtdPessoas": 4,
+      "quilosCarne": "3.0 Kg",
+      "latasCeva": "16 Latões"
     },
     {
       "id": 2,
-      "tarefa": "Churrasco 2",
-      "id_lista": 2
+      "tarefa": "Churras 2",
+      "dataChurras": "",
+      "qtdPessoas": 4,
+      "quilosCarne": "3.0 Kg",
+      "latasCeva": "16 Latões"
+    },
+    {
+      "tarefa": "Churras 3",
+      "dataChurras": "2019-10-25T03:51:45.061Z",
+      "qtdPessoas": 0,
+      "quilosCarne": "1.5 Kg",
+      "latasCeva": "12 Latões",
+      "id": 3
+    },
+    {
+      "tarefa": "Churras 4",
+      "dataChurras": "2019-10-26T03:55:12.000Z",
+      "qtdPessoas": 0,
+      "quilosCarne": "2.5 Kg",
+      "latasCeva": "20 Latões",
+      "id": 4
     }
   ]
 }
