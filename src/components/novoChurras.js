@@ -7,6 +7,7 @@ import {
   ImageBackground,
   DatePickerIOS,
   Button,
+  Alert
 } from 'react-native';
 import api from '../services/api';
 import {background} from '../assets/image';
@@ -41,22 +42,48 @@ export default class NovoChurrasScreen extends Component {
   };
 
   calculaCarneCerveja(qtdPessoas) {
-    if (qtdPessoas) {
-      this.setState({qtdPessoas: qtdPessoas})
-      const num = parseInt(qtdPessoas);
-      let kg = 0.0;
-      for (let i = 0; i < num; i++) {
-        kg = kg + 0.75;
+    if (qtdPessoas !== '') {
+      if(parseInt(qtdPessoas) > 0){
+        this.setState({qtdPessoas: qtdPessoas});
+        const num = parseInt(qtdPessoas);
+        let kg = 0.0;
+        for (let i = 0; i < num; i++) {
+          kg = kg + 0.75;
+        }
+        this.setState({quilosCarne: `${kg} Kg`, latasCeva: `${num * 4} Latões`});
+      } else {
+        this.setState({qtdPessoas: qtdPessoas});
+        this.setState({quilosCarne: '0.0 Kg', latasCeva: '0 Latões'});  
       }
-      this.setState({quilosCarne: `${kg} Kg`, latasCeva: `${num * 4} Latões`});
     } else {
-      this.setState({quilosCarne: '0.000 Kg', latasCeva: '0 Latões'});
+      this.setState({qtdPessoas: qtdPessoas});
+      this.setState({quilosCarne: '0.0 Kg', latasCeva: '0 Latões'});
     }
   }
 
+
   async salvaChurras(state) {
-    await api.post('/churras', state);
-    this.props.navigation.goBack();
+    if (state.evento !== '' && state.local !== null && state.qtdPessoas !== '') {
+      if (parseInt(state.qtdPessoas) > 0) {
+        await api.post('/churras', state);
+        this.props.navigation.goBack();
+      } else {
+        this.alert();
+      } 
+    } else {
+      this.alert();
+    }
+  }
+
+  alert() {
+    Alert.alert(
+      'Campos Obrigatórios',
+      'O nome do do evento e o local são obrigatórios, assim como o número de pessoas que deve ser maior que 0!',
+      [
+        {text: 'OK', onPress: () => console.log('OK Pressed')},
+      ],
+      {cancelable: false},
+    );
   }
 
   render() {

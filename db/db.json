@@ -35,6 +35,15 @@
       "quilosCarne": "7.5 Kg",
       "latasCeva": "40 Latões",
       "id": 4
+    },
+    {
+      "evento": "Churras dos Guri",
+      "local": "Casa do Badanha",
+      "dataChurras": "2019-10-26T10:14:30.042Z",
+      "qtdPessoas": "10",
+      "quilosCarne": "7.5 Kg",
+      "latasCeva": "40 Latões",
+      "id": 5
     }
   ]
 }
